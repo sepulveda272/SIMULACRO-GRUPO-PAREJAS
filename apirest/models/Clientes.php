@@ -31,9 +31,13 @@ class Clientes extends Conectar{
     }
 
     public function insert_cliente($idCliente,$nombreCliente,$celularCliente,$obraCliente){
+        $idCliente = $_POST["idCliente"];
+        $nombreCliente = $_POST["nombreCliente"];
+        $celularCliente = $_POST["celularCliente"];
+        $obraCliente = $_POST["obraCliente"];
         $conectar=parent::Conexion();
         parent::set_name();
-        $stm="INSERT INTO empleados(idCliente,nombreCliente,celularCliente,obraCliente) VALUES(?,?,?,?)";
+        $stm="INSERT INTO clientes(idCliente,nombreCliente,celularCliente,obraCliente) VALUES(?,?,?,?)";
         $stm=$conectar->prepare($stm);
         $stm->bindValue(1,$idCliente);
         $stm->bindValue(2,$nombreCliente);
@@ -42,6 +46,16 @@ class Clientes extends Conectar{
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
 
+    }
+
+    public function delete_cliente($idCliente){
+        $idCliente = $_POST["idCliente"];
+        $conectar = parent::Conexion();
+        parent::set_name();
+        $stm = $conectar ->prepare("DELETE FROM clientes WHERE idCliente= ?");
+        $stm -> bindValue(1,$idCliente);
+        $stm -> execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

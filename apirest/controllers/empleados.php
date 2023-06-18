@@ -25,7 +25,12 @@ switch ($_GET['op']){
 
         $datos = $empleado-> insert_empleado($body['idEmpleado'],$body['nombreEmpleado'],$body['celularEmpleado'],$body['direccionEmpleado']);
         echo json_encode("insertado correctamente");
+        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/empleados");
 
+    break;
+    case 'delete':
+        $datos = $empleado ->delete_empleado($body['idEmpleado']);
+        header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/empleados');
     break;
 }
 

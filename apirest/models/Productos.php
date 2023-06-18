@@ -31,9 +31,12 @@ class Productos extends Conectar{
     }
 
     public function insert_producto($idProducto,$nombreProducto,$precioProducto){
+        $idProducto = $_POST["idProducto"];
+        $nombreProducto = $_POST["nombreProducto"];
+        $precioProducto = $_POST["precioProducto"];
         $conectar=parent::Conexion();
         parent::set_name();
-        $stm="INSERT INTO empleados(idProducto,nombreProducto,precioProducto) VALUES(?,?,?)";
+        $stm="INSERT INTO productos(idProducto,nombreProducto,precioProducto) VALUES(?,?,?)";
         $stm=$conectar->prepare($stm);
         $stm->bindValue(1,$idProducto);
         $stm->bindValue(2,$nombreProducto);
@@ -41,6 +44,15 @@ class Productos extends Conectar{
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
 
+    }
+    public function delete_producto($idProducto){
+        $idProducto = $_POST["idProducto"];
+        $conectar = parent::Conexion();
+        parent::set_name();
+        $stm = $conectar ->prepare("DELETE FROM productos WHERE idProducto= ?");
+        $stm -> bindValue(1,$idProducto);
+        $stm -> execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

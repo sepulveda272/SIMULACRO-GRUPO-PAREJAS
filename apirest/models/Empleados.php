@@ -31,6 +31,10 @@ class Empleados extends Conectar{
     }
 
     public function insert_empleado($idEmpleado,$nombreEmpleado,$celularEmpleado,$direccionEmpleado){
+        $idEmpleado = $_POST["idEmpleado"];
+        $nombreEmpleado = $_POST["nombreEmpleado"];
+        $celularEmpleado = $_POST["celularEmpleado"];
+        $direccionEmpleado = $_POST["direccionEmpleado"];
         $conectar=parent::Conexion();
         parent::set_name();
         $stm="INSERT INTO empleados(idEmpleado,nombreEmpleado,celularEmpleado,direccionEmpleado) VALUES(?,?,?,?)";
@@ -42,6 +46,15 @@ class Empleados extends Conectar{
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
 
+    }
+    public function delete_empleado($idEmpleado){
+        $idEmpleado = $_POST["idEmpleado"];
+        $conectar = parent::Conexion();
+        parent::set_name();
+        $stm = $conectar ->prepare("DELETE FROM empleados WHERE idEmpleado= ?");
+        $stm -> bindValue(1,$idEmpleado);
+        $stm -> execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

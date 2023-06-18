@@ -25,8 +25,13 @@ switch ($_GET['op']){
 
         $datos = $cliente-> insert_cliente($body['idCliente'],$body['nombreCliente'],$body['celularCliente'],$body['obraCliente']);
         echo json_encode("insertado correctamente");
+        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/clientes");
 
     break;
+    case 'delete':
+        $datos = $cliente ->delete_cliente($body['idCliente']);
+        header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/clientes');
+        break;
 }
 
 ?>

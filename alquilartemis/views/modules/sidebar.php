@@ -32,8 +32,8 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="/simulacro_grupo/alquilartemis/"
-                        class="nav-link <?php if ($routesArray[3] == ""): ?> active <?php endif ?>">
+                    <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/"
+                        class="nav-link <?php if ($routesArray[4] == ""): ?> active <?php endif ?>">
                         <i class="nav-icon far fa-user"></i>
                         <p>
                             Home
@@ -41,8 +41,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/simulacro_grupo/alquilartemis/clientes"
-                        class="nav-link <?php if ($routesArray[3] == "clientes"): ?> active <?php endif ?>">
+                    <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/clientes"
+                        class="nav-link <?php if ($routesArray[4] == "clientes"): ?> active <?php endif ?>">
                         <i class="nav-icon far fa-user"></i>
                         <p>
                             Clientes
@@ -50,8 +50,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/simulacro_grupo/alquilartemis/empleados"
-                        class="nav-link <?php if ($routesArray[3] == "empleados"): ?> active <?php endif ?>">
+                    <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/empleados"
+                        class="nav-link <?php if ($routesArray[4] == "empleados"): ?> active <?php endif ?>">
                         <i class="nav-icon far fa-user"></i>
                         <p>
                             Empleados
@@ -68,14 +68,14 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/simulacro_grupo/alquilartemis/entradas/entrada"
+                            <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/entrada"
                                 class="nav-link <?php if ($routesArray[4] == "entrada"): ?> active <?php endif ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Entrada</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/simulacro_grupo/alquilartemis/entradas/entradaDetalle"
+                            <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/entradaDetalle"
                                 class="nav-link <?php if ($routesArray[4] == "entradaDetalle"): ?> active <?php endif ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Detalles</p>
@@ -94,15 +94,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/simulacro_grupo/alquilartemis/salida"
-                                class="nav-link <?php if ($routesArray[3] == "salida"): ?> active <?php endif ?>">
+                            <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/salida"
+                                class="nav-link <?php if ($routesArray[4] == "salida"): ?> active <?php endif ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Salida</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/simulacro_grupo/alquilartemis/salidaDetalle"
-                                class="nav-link <?php if ($routesArray[3] == "salidaDetalle"): ?> active <?php endif ?>">
+                            <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/salidaDetalle"
+                                class="nav-link <?php if ($routesArray[4] == "salidaDetalle"): ?> active <?php endif ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Detalles</p>
                             </a>
@@ -111,8 +111,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/simulacro_grupo/alquilartemis/inventario"
-                        class="nav-link <?php if ($routesArray[3] == "inventario"): ?> active <?php endif ?>">
+                    <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/inventario"
+                        class="nav-link <?php if ($routesArray[4] == "inventario"): ?> active <?php endif ?>">
                         <i class="nav-icon far fa-user"></i>
                         <p>
                             Inventario
@@ -121,8 +121,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/simulacro_grupo/alquilartemis/productos"
-                        class="nav-link <?php if ($routesArray[3] == "productos"): ?> active <?php endif ?>">
+                    <a href="/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/productos"
+                        class="nav-link <?php if ($routesArray[4] == "productos"): ?> active <?php endif ?>">
                         <i class="nav-icon far fa-user"></i>
                         <p>
                             Productos

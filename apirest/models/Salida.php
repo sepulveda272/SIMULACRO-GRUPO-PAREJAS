@@ -32,6 +32,14 @@ class Salidas extends Conectar{
     }
 
     public function insert_salida($idSalida,$idCliente,$idEmpleado,$fechaSalida,$horaSalida,$subtotalPeso,$placaTransporte,$observaciones){
+        $idSalida = $_POST["idSalida"];
+        $idCliente = $_POST["idCliente"];
+        $idEmpleado = $_POST["idEmpleado"];
+        $fechaSalida = $_POST["fechaSalida"];
+        $horaSalida = $_POST["horaSalida"];
+        $subtotalPeso = $_POST["subtotalPeso"];
+        $placaTransporte = $_POST["placaTransporte"];
+        $observaciones = $_POST["observaciones"];
         $conectar=parent::Conexion();
         parent::set_name();
         $stm="INSERT INTO salida(idSalida,idCliente,idEmpleado,fechaSalida,horaSalida,subtotalPeso,placaTransporte,observaciones) VALUES(?,?,?,?,?,?,?,?)";
@@ -47,6 +55,15 @@ class Salidas extends Conectar{
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
 
+    }
+    public function delete_salida($idSalida){
+        $idSalida = $_POST["idSalida"];
+        $conectar = parent::Conexion();
+        parent::set_name();
+        $stm = $conectar ->prepare("DELETE FROM salida WHERE idSalida= ?");
+        $stm -> bindValue(1,$idSalida);
+        $stm -> execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

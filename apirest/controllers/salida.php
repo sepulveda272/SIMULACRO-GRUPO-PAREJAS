@@ -31,8 +31,13 @@ switch ($_GET['op']){
 
         $datos = $salida-> insert_salida($body['idSalida'],$body['idCliente'],$body['idEmpleado'],$body['fechaSalida'],$body['horaSalida'],$body['subtotalPeso'],$body['placaTransporte'],$body['observaciones']);
         echo json_encode("insertado correctamente");
+        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/salida");
 
-    break;
+        break;
+        case 'delete':
+            $datos = $salida ->delete_salida($body['idSalida']);
+            header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/salida');
+            break;
 }
 
 

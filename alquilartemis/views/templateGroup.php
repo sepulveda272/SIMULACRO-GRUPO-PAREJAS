@@ -23,6 +23,10 @@ $routesArray = array_filter($routesArray);
     <link rel="stylesheet" href="views/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="views/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
     <!-- jQuery -->
     <script src="views/assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -45,6 +49,11 @@ $routesArray = array_filter($routesArray);
     <script src="views/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="views/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="views/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -61,18 +70,18 @@ $routesArray = array_filter($routesArray);
  */
 
 
-            if (!empty($routesArray[3])) {
+            if (!empty($routesArray[4])) {
                 if (
-                    $routesArray[3] == "clientes" ||
-                    $routesArray[3] == "empleados" ||
-                    $routesArray[3] == "entrada" ||
-                    $routesArray[3] == "entradaDetalle" ||
-                    $routesArray[3] == "inventario" ||
-                    $routesArray[3] == "productos" ||
-                    $routesArray[3] == "salida" ||
-                    $routesArray[3] == "salidaDetalle"
+                    $routesArray[4] == "clientes" ||
+                    $routesArray[4] == "empleados" ||
+                    $routesArray[4] == "entrada" ||
+                    $routesArray[4] == "entradaDetalle" ||
+                    $routesArray[4] == "inventario" ||
+                    $routesArray[4] == "productos" ||
+                    $routesArray[4] == "salida" ||
+                    $routesArray[4] == "salidaDetalle"
                 ) {
-                    include "views/pages/" . $routesArray[3] . "/" . $routesArray[3] . ".php";
+                    include "views/pages/" . $routesArray[4] . "/" . $routesArray[4] . ".php";
                 }
             } else {
                 include "views/pages/home/home.php";
