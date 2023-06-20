@@ -11,7 +11,7 @@ class EntradasDetalles extends Conectar{
         try {
             $conectar = parent::Conexion();
             parent::set_name();
-            $stm = $conectar->prepare("SELECT * FROM salidaDetalle");
+            $stm = $conectar->prepare("SELECT * FROM entradaDetalle");
             $stm -> execute();
             return $stm->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exeception $e) {
@@ -31,7 +31,41 @@ class EntradasDetalles extends Conectar{
         }
     }
 
+    public function get_entrada_id($idEntrada){
+        try {
+            $conectar = parent::Conexion();
+            parent::set_name();
+            $stm = $conectar->prepare("SELECT * FROM entrada WHERE idEntrada = ?");
+            $stm -> bindValue(1,$idEntrada);
+            $stm -> execute();
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exeception $e) {
+            return $e -> getMessage();
+        }
+    }
+
+    public function get_cliente_id($idCliente){
+        try {
+            $conectar = parent::Conexion();
+            parent::set_name();
+            $stm = $conectar->prepare("SELECT * FROM clientes WHERE idCliente = ?");
+            $stm -> bindValue(1,$idCliente);
+            $stm -> execute();
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exeception $e) {
+            return $e -> getMessage();
+        }
+    }
+
     public function insert_entrada_Detalle($idEntradaDetalle,$idEntrada,$idProducto,$idCliente,$entradaCantidad,$entradaCantidadPropia,$entradaCantidadSubalquilada,$estado){
+        $idEntradaDetalle = $_POST["idEntradaDetalle"];
+        $idEntrada = $_POST["idEntrada"];
+        $idProducto = $_POST["idProducto"];
+        $idCliente = $_POST["idCliente"];
+        $entradaCantidad = $_POST["entradaCantidad"];
+        $entradaCantidadPropia = $_POST["entradaCantidadPropia"];
+        $entradaCantidadSubalquilada = $_POST["entradaCantidadSubalquilada"];
+        $estado = $_POST["estado"];
         $conectar=parent::Conexion();
         parent::set_name();
         $stm="INSERT INTO entradaDetalle(idEntradaDetalle,idEntrada,idProducto,idCliente,entradaCantidad,entradaCantidadPropia,entradaCantidadSubalquilada,estado) VALUES(?,?,?,?,?,?,?,?)";
@@ -47,6 +81,15 @@ class EntradasDetalles extends Conectar{
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
 
+    }
+    public function delete_entrada_Detalle($idEntradaDetalle){
+        $idEntradaDetalle = $_POST["idEntradaDetalle"];
+        $conectar = parent::Conexion();
+        parent::set_name();
+        $stm = $conectar ->prepare("DELETE FROM entradaDetalle WHERE idEntradaDetalle= ?");
+        $stm -> bindValue(1,$idEntradaDetalle);
+        $stm -> execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

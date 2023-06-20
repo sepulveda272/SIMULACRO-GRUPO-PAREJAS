@@ -27,12 +27,22 @@ switch ($_GET['op']){
         echo json_encode($datos);
     break;
 
+    case "GetIdProducto":
+        $datos = $inventario->get_producto_id($body["idProducto"]);
+        echo json_encode($datos);
+    break;
+
     case "insert":
 
         $datos = $inventario-> insert_inventario($body['idInventario'],$body['idProducto'],$body['CantidadInicial'],$body['CantidadIngresos'],$body['CantidadSalidas'],$body['CantidadFinal'],$body['FechaInventario'],$body['TipoOperacion']);
         echo json_encode("insertado correctamente");
+        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/inventario");
 
-    break;
+        break;
+        case 'delete':
+            $datos = $inventario ->delete_inventario($body['idInventario']);
+            header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/inventario');
+            break;
 }
 
 

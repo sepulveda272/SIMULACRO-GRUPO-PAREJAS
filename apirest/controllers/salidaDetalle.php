@@ -28,12 +28,35 @@ switch ($_GET['op']){
         echo json_encode($datos);
     break;
 
+    case "GetIdSalida":
+        $datos = $salidaDetalle->get_salida_id($body["idSalida"]);
+        echo json_encode($datos);
+    break;
+
+    case "GetIdProducto":
+        $datos = $salidaDetalle->get_producto_id($body["idProducto"]);
+        echo json_encode($datos);
+    break;
+    case "GetIdCliente":
+        $datos = $salidaDetalle->get_cliente_id($body["idCliente"]);
+        echo json_encode($datos);
+    break;
+    case "GetIdEmpleado":
+        $datos = $salidaDetalle->get_empleado_id($body["idEmpleado"]);
+        echo json_encode($datos);
+    break;
+
     case "insert":
 
-        $datos = $salida-> insert_salida_Detalle($body['idSalidaDetalle'],$body['idSalida'],$body['idProducto'],$body['idCliente'],$body['idEmpleado'],$body['cantidadSalida'],$body['cantidadPropia'],$body['cantidadSubalquilada'],$body['valorUnidad'],$body['fechaStandBye'],$body['estado'],$body['valorTotal']);
+        $datos = $salidaDetalle-> insert_salida_Detalle($body['idSalidaDetalle'],$body['idSalida'],$body['idProducto'],$body['idCliente'],$body['idEmpleado'],$body['cantidadSalida'],$body['cantidadPropia'],$body['cantidadSubalquilada'],$body['valorUnidad'],$body['fechaStandBye'],$body['estado'],$body['valorTotal']);
         echo json_encode("insertado correctamente");
+        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/salidaDetalle");
 
-    break;
+        break;
+        case 'delete':
+            $datos = $salidaDetalle ->delete_salida_Detalle($body['idSalidaDetalle']);
+            header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/salidaDetalle');
+            break;
 }
 
 ?>

@@ -1,4 +1,12 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand 
+    <?php if ($routesArray[4] == ""): ?> navbar-white <?php endif ?> 
+    <?php if ($routesArray[4] == "clientes"): ?> navbar-lightblue <?php endif ?> 
+    <?php if ($routesArray[4] == "empleados"): ?> navbar-warning <?php endif ?> 
+    <?php if ($routesArray[4] == "entrada" || $routesArray[4] == "entradaDetalle"): ?> navbar-lime <?php endif ?> 
+    <?php if ($routesArray[4] == "salida" || $routesArray[4] == "salidaDetalle" ): ?> navbar-danger <?php endif ?> 
+    <?php if ($routesArray[4] == "inventario"): ?> navbar-orange<?php endif ?> 
+    <?php if ($routesArray[4] == "productos"): ?> navbar-maroon <?php endif ?> 
+    navbar-light">
 
     <ul class="navbar-nav">
         <li class="nav-item">

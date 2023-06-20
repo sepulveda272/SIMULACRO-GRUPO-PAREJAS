@@ -27,6 +27,16 @@ switch ($_GET['op']){
         echo json_encode($datos);
     break;
 
+    case "GetIdCliente":
+        $datos = $salida->get_cliente_id($body["idCliente"]);
+        echo json_encode($datos);
+    break;
+
+    case "GetIdEmpleado":
+        $datos = $salida->get_empleado_id($body["idEmpleado"]);
+        echo json_encode($datos);
+    break;
+
     case "insert":
 
         $datos = $salida-> insert_salida($body['idSalida'],$body['idCliente'],$body['idEmpleado'],$body['fechaSalida'],$body['horaSalida'],$body['subtotalPeso'],$body['placaTransporte'],$body['observaciones']);

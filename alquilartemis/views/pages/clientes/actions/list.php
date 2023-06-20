@@ -6,8 +6,6 @@ curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $output = json_decode(curl_exec($curl));
  /* print_r($output); */
-
-
 ?>
 
 
@@ -15,14 +13,14 @@ $output = json_decode(curl_exec($curl));
     <div class="card-header">
     
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Registrar
+<button type="button" class="btn bg-lightblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Registrar Nuevo Cliente
 </button>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
     <table id="example1" class="table table-bordered table-striped">
-        <thead>
+        <thead class="bg-lightblue">
         <tr>
         <th>Nombre</th>
         <th>Celular</th>
@@ -61,12 +59,13 @@ $output = json_decode(curl_exec($curl));
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Añadir cliente</h5>
+      <div class="modal-header bg-lightblue">
+        <h5 class="modal-title" id="exampleModalLabel">Información Nuevo Cliente</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form action="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=insert" method="post">
+          <p>Por favor llenar todos los espacios con la infromación correspondiente</p>
             <div class="card-body">
               <div class="form-group">
                 <label for="exampleInputEmail1">Nombre Completo</label>
@@ -77,17 +76,14 @@ $output = json_decode(curl_exec($curl));
                 <input type="number" class="form-control" id="exampleInputEdad"  name="celularCliente">
               </div>
               <div class="form-group">
-                <label for="exampleInputEspecialidad">Obra</label>
+                <label for="exampleInputEspecialidad">Nombre de la obra en la que trabaja</label>
                 <input type="text" class="form-control" id="exampleInputEspecialidad"  name="obraCliente">
               </div>
               <div class="form-check">
-                <input type="submit" class="btn btn-primary" name="guardar" value="Guardar">
+                <input type="submit" class="btn bg-lightblue" name="guardar" value="Registrar">
               </div>
             </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </form> 
       </div>
     </div>
   </div>

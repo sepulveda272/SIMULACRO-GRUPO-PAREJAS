@@ -31,6 +31,32 @@ class Salidas extends Conectar{
         }
     }
 
+    public function get_cliente_id($idCliente){
+        try {
+            $conectar = parent::Conexion();
+            parent::set_name();
+            $stm = $conectar->prepare("SELECT * FROM clientes WHERE idCliente = ?");
+            $stm -> bindValue(1,$idCliente);
+            $stm -> execute();
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exeception $e) {
+            return $e -> getMessage();
+        }
+    }
+
+    public function get_empleado_id($idEmpleado){
+        try {
+            $conectar = parent::Conexion();
+            parent::set_name();
+            $stm = $conectar->prepare("SELECT * FROM empleados WHERE idEmpleado = ?");
+            $stm -> bindValue(1,$idEmpleado);
+            $stm -> execute();
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exeception $e) {
+            return $e -> getMessage();
+        }
+    }
+
     public function insert_salida($idSalida,$idCliente,$idEmpleado,$fechaSalida,$horaSalida,$subtotalPeso,$placaTransporte,$observaciones){
         $idSalida = $_POST["idSalida"];
         $idCliente = $_POST["idCliente"];

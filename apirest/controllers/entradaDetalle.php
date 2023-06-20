@@ -28,12 +28,27 @@ switch ($_GET['op']){
         echo json_encode($datos);
     break;
 
+    case "GetIdEntrada":
+        $datos = $entradaDetalle->get_entrada_id($body["idEntrada"]);
+        echo json_encode($datos);
+    break;
+
+    case "GetIdCliente":
+        $datos = $entradaDetalle->get_cliente_id($body["idCliente"]);
+        echo json_encode($datos);
+    break;
+
     case "insert":
 
         $datos = $entradaDetalle-> insert_entrada_Detalle($body['idEntradaDetalle'],$body['idEntrada'],$body['idProducto'],$body['idCliente'],$body['entradaCantidad'],$body['entradaCantidadPropia'],$body['entradaCantidadSubalquilada'],$body['estado']);
         echo json_encode("insertado correctamente");
+        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/entradaDetalle");
 
-    break;
+        break;
+        case 'delete':
+            $datos = $entradaDetalle ->delete_entrada_Detalle($body['idEntradaDetalle']);
+            header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/entradaDetalle');
+            break;
 }
 
 ?>
