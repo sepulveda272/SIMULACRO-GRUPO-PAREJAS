@@ -65,8 +65,8 @@
             <h1>GERENTES</h1>
             <div class="row align-items-start">
                 <div class="col">
-                    <h4>Juan David Sepuelveda</h4>
-                    <img src="views/assets/img/sepulveda.jpg" alt="" width="300px">
+                    <h4>Juan David Sepulveda</h4>
+                    <img src="views/assets/img/file.jpeg" alt="" width="300px">
                 </div>
 
                 <div class="col">
