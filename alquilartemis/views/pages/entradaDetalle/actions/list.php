@@ -30,19 +30,55 @@ $output = json_decode(curl_exec($curl));
         <th>entradaCantidad</th>
         <th>entradaCantidadPropia</th>
         <th>entradaCantidadSubalquilada</th>
-        <th>entradaCantidadSubalquilada</th>
         <th>estado</th>
+        <th>Borrar</th>
         </tr>
         </thead>
         <tbody>
             <?php
                 foreach ($output as $out)
                 {
+                  $url = "http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=GetIdCliente";
+                  $urlP ="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/salidaDetalle.php?op=GetIdProducto";
+
+                  $dataC = array(
+                    'idCliente' => $out -> idCliente
+                );
+    
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST,true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dataC)); 
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            
+                $clientes = json_decode( curl_exec ($ch));
+                curl_close($ch);
+    
+                ($clientes);
+
+                $dataP = array(
+                  'idProducto' => $out -> idProducto
+              );
+  
+  
+              $ch = curl_init();
+              curl_setopt($ch, CURLOPT_URL, $urlP);
+              curl_setopt($ch, CURLOPT_POST,true);
+              curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dataP)); 
+              curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+          
+             
+  
+  
+              $productos = json_decode( curl_exec ($ch));
+              curl_close($ch);
             ?>
         <tr>
         <td><?php echo $out -> idEntrada ?> </td>
-        <td><?php echo $out -> idProducto ?> </td>
-        <td><?php echo $out -> idCliente ?> </td>
+        <td><?php foreach($productos as $producto){
+        echo $producto -> nombreProducto; }?> </td>
+        <td><?php foreach($clientes as $cliente){
+        echo $cliente -> nombreCliente; }?> </td>
         <td><?php echo $out -> entradaCantidad ?> </td>
         <td><?php echo $out -> entradaCantidadPropia ?> </td>
         <td><?php echo $out -> entradaCantidadSubalquilada ?> </td>

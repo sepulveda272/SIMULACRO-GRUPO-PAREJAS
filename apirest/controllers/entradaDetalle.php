@@ -33,6 +33,11 @@ switch ($_GET['op']){
         echo json_encode($datos);
     break;
 
+    case "GetIdProducto":
+        $datos = $entradaDetalle->get_producto_id($body["idProducto"]);
+        echo json_encode($datos);
+    break;
+
     case "GetIdCliente":
         $datos = $entradaDetalle->get_cliente_id($body["idCliente"]);
         echo json_encode($datos);

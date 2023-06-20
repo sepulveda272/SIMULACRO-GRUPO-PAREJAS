@@ -44,6 +44,19 @@ class EntradasDetalles extends Conectar{
         }
     }
 
+    public function get_producto_id($idProducto){
+        try {
+            $conectar = parent::Conexion();
+            parent::set_name();
+            $stm = $conectar->prepare("SELECT * FROM productos WHERE idProducto = ?");
+            $stm -> bindValue(1,$idProducto);
+            $stm -> execute();
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exeception $e) {
+            return $e -> getMessage();
+        }
+    }
+
     public function get_cliente_id($idCliente){
         try {
             $conectar = parent::Conexion();
