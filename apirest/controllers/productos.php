@@ -25,12 +25,12 @@ switch ($_GET['op']){
 
         $datos = $producto-> insert_producto($body['idProducto'],$body['nombreProducto'],$body['precioProducto']);
         echo json_encode("insertado correctamente");
-        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/productos");
+        header("Location: http://localhost/SIMULACRO-GRUPO-PAREJAS/alquilartemis/productos");
 
     break;
     case 'delete':
         $datos = $producto ->delete_producto($body['idProducto']);
-        header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/productos');
+        header('Location: http://localhost/SIMULACRO-GRUPO-PAREJAS/alquilartemis/productos');
         break;
 }
 

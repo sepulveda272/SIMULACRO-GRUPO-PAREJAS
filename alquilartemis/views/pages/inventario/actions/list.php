@@ -1,6 +1,6 @@
 <?php
 
-$url ="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/inventario.php?op=GetAll";
+$url ="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/inventario.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -39,7 +39,7 @@ $output = json_decode(curl_exec($curl));
             <?php
                 foreach ($output as $out)
                 {
-                $urlP ="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/inventario.php?op=GetIdProducto";
+                $urlP ="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/inventario.php?op=GetIdProducto";
 
               $dataP = array(
                   'idProducto' => $out -> idProducto
@@ -69,7 +69,7 @@ $output = json_decode(curl_exec($curl));
         <td><?php echo $out -> FechaInventario ?> </td>
         <td><?php echo $out -> TipoOperacion ?> </td>
         <td>
-          <form action="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/inventario.php?op=delete" method="post">
+          <form action="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/inventario.php?op=delete" method="post">
             <input type="hidden" name="idInventario" value="<?php echo $out->idInventario ?>">
             <input type="submit" name="borrar" class="btn btn-danger" value="DELETE">
           </form>
@@ -95,12 +95,12 @@ $output = json_decode(curl_exec($curl));
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/inventario.php?op=insert" method="post">
+        <form action="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/inventario.php?op=insert" method="post">
             <div class="card-body">
               <div class="form-group">
                 <label for="exampleInputEmail1">idProducto</label>
                 <?php
-          $url = "http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/productos.php?op=GetAll";
+          $url = "http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/productos.php?op=GetAll";
           $AllProducto = curl_init();
           curl_setopt($AllProducto, CURLOPT_URL, $url);
           curl_setopt($AllProducto, CURLOPT_RETURNTRANSFER,1);

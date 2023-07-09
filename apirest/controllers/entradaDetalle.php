@@ -47,12 +47,12 @@ switch ($_GET['op']){
 
         $datos = $entradaDetalle-> insert_entrada_Detalle($body['idEntradaDetalle'],$body['idEntrada'],$body['idProducto'],$body['idCliente'],$body['entradaCantidad'],$body['entradaCantidadPropia'],$body['entradaCantidadSubalquilada'],$body['estado']);
         echo json_encode("insertado correctamente");
-        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/entradaDetalle");
+        header("Location: http://localhost/SIMULACRO-GRUPO-PAREJAS/alquilartemis/entradaDetalle");
 
         break;
         case 'delete':
             $datos = $entradaDetalle ->delete_entrada_Detalle($body['idEntradaDetalle']);
-            header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/entradaDetalle');
+            header('Location: http://localhost/SIMULACRO-GRUPO-PAREJAS/alquilartemis/entradaDetalle');
             break;
 }
 

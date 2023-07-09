@@ -70,18 +70,18 @@ $routesArray = array_filter($routesArray);
  */
 
 
-            if (!empty($routesArray[4])) {
+            if (!empty($routesArray[3])) {
                 if (
-                    $routesArray[4] == "clientes" ||
-                    $routesArray[4] == "empleados" ||
-                    $routesArray[4] == "entrada" ||
-                    $routesArray[4] == "entradaDetalle" ||
-                    $routesArray[4] == "inventario" ||
-                    $routesArray[4] == "productos" ||
-                    $routesArray[4] == "salida" ||
-                    $routesArray[4] == "salidaDetalle"
+                    $routesArray[3] == "clientes" ||
+                    $routesArray[3] == "empleados" ||
+                    $routesArray[3] == "entrada" ||
+                    $routesArray[3] == "entradaDetalle" ||
+                    $routesArray[3] == "inventario" ||
+                    $routesArray[3] == "productos" ||
+                    $routesArray[3] == "salida" ||
+                    $routesArray[3] == "salidaDetalle"
                 ) {
-                    include "views/pages/" . $routesArray[4] . "/" . $routesArray[4] . ".php";
+                    include "views/pages/" . $routesArray[3] . "/" . $routesArray[3] . ".php";
                 }
             } else {
                 include "views/pages/home/home.php";

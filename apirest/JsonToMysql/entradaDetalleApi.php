@@ -34,8 +34,8 @@ $datosEntradaDetalle = json_decode($entradaDetalles, true);
 
 
 $server = "localhost";
-$user = "campus";
-$pass = "campus2023";
+$user = "root";
+$pass = "";
 $bd = "alquilartemis_grupo";
 
 //Creamos la conexión

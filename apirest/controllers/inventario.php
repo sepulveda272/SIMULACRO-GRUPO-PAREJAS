@@ -36,12 +36,12 @@ switch ($_GET['op']){
 
         $datos = $inventario-> insert_inventario($body['idInventario'],$body['idProducto'],$body['CantidadInicial'],$body['CantidadIngresos'],$body['CantidadSalidas'],$body['CantidadFinal'],$body['FechaInventario'],$body['TipoOperacion']);
         echo json_encode("insertado correctamente");
-        header("Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/inventario");
+        header("Location: http://localhost/SIMULACRO-GRUPO-PAREJAS/alquilartemis/inventario");
 
         break;
         case 'delete':
             $datos = $inventario ->delete_inventario($body['idInventario']);
-            header('Location: http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/alquilartemis/inventario');
+            header('Location: http://localhost/SIMULACRO-GRUPO-PAREJAS/alquilartemis/inventario');
             break;
 }
 

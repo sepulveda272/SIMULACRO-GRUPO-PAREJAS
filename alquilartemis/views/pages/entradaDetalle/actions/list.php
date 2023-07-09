@@ -1,6 +1,6 @@
 <?php
 
-$url ="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=GetAll";
+$url ="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -38,8 +38,8 @@ $output = json_decode(curl_exec($curl));
             <?php
                 foreach ($output as $out)
                 {
-                  $url = "http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=GetIdCliente";
-                  $urlP ="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/salidaDetalle.php?op=GetIdProducto";
+                  $url = "http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=GetIdCliente";
+                  $urlP ="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/salidaDetalle.php?op=GetIdProducto";
 
                   $dataC = array(
                     'idCliente' => $out -> idCliente
@@ -84,7 +84,7 @@ $output = json_decode(curl_exec($curl));
         <td><?php echo $out -> entradaCantidadSubalquilada ?> </td>
         <td><?php echo $out -> estado ?> </td>
         <td>
-          <form action="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=delete" method="post">
+          <form action="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=delete" method="post">
             <input type="hidden" name="idEntradaDetalle" value="<?php echo $out->idEntradaDetalle ?>">
             <input type="submit" name="borrar" class="btn btn-danger" value="DELETE">
           </form>
@@ -110,13 +110,13 @@ $output = json_decode(curl_exec($curl));
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=insert" method="post">
+        <form action="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entradaDetalle.php?op=insert" method="post">
           <p>Por favor llenar todos los espacios con la infromación correspondiente</p>
             <div class="card-body">
             <div class="form-group">
                 <label for="exampleInputEmail1">idEntrada</label><br>
                 <?php
-          $url = "http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entreda.php?op=GetAll";
+          $url = "http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/entreda.php?op=GetAll";
           $Allentrada = curl_init();
           curl_setopt($Allentrada, CURLOPT_URL, $url);
           curl_setopt($Allentrada, CURLOPT_RETURNTRANSFER,1);
@@ -131,7 +131,7 @@ $output = json_decode(curl_exec($curl));
               <div class="form-group">
                 <label for="exampleInputEmail1">idProducto</label>
                 <?php
-          $url = "http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/productos.php?op=GetAll";
+          $url = "http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/productos.php?op=GetAll";
           $AllProducto = curl_init();
           curl_setopt($AllProducto, CURLOPT_URL, $url);
           curl_setopt($AllProducto, CURLOPT_RETURNTRANSFER,1);
@@ -147,7 +147,7 @@ $output = json_decode(curl_exec($curl));
               <div class="form-group">
                 <label for="exampleInputEmail1">idCliente</label><br>
                 <?php
-          $url = "http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=GetAll";
+          $url = "http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=GetAll";
           $Allcliente = curl_init();
           curl_setopt($Allcliente, CURLOPT_URL, $url);
           curl_setopt($Allcliente, CURLOPT_RETURNTRANSFER,1);

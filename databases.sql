@@ -1,6 +1,6 @@
 CREATE DATABASE  alquilartemis_grupo;
 
-
+USE alquilartemis_grupo;
 
 CREATE TABLE empleados(
     idEmpleado INT PRIMARY KEY AUTO_INCREMENT,

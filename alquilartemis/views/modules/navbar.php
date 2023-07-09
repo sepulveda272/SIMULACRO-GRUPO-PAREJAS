@@ -1,11 +1,11 @@
 <nav class="main-header navbar navbar-expand 
-    <?php if ($routesArray[4] == ""): ?> navbar-white <?php endif ?> 
-    <?php if ($routesArray[4] == "clientes"): ?> navbar-lightblue <?php endif ?> 
-    <?php if ($routesArray[4] == "empleados"): ?> navbar-warning <?php endif ?> 
-    <?php if ($routesArray[4] == "entrada" || $routesArray[4] == "entradaDetalle"): ?> navbar-lime <?php endif ?> 
-    <?php if ($routesArray[4] == "salida" || $routesArray[4] == "salidaDetalle" ): ?> navbar-danger <?php endif ?> 
-    <?php if ($routesArray[4] == "inventario"): ?> navbar-orange<?php endif ?> 
-    <?php if ($routesArray[4] == "productos"): ?> navbar-maroon <?php endif ?> 
+    <?php if ($routesArray[3] == ""): ?> navbar-white <?php endif ?> 
+    <?php if ($routesArray[3] == "clientes"): ?> navbar-lightblue <?php endif ?> 
+    <?php if ($routesArray[3] == "empleados"): ?> navbar-warning <?php endif ?> 
+    <?php if ($routesArray[3] == "entrada" || $routesArray[3] == "entradaDetalle"): ?> navbar-lime <?php endif ?> 
+    <?php if ($routesArray[3] == "salida" || $routesArray[3] == "salidaDetalle" ): ?> navbar-danger <?php endif ?> 
+    <?php if ($routesArray[3] == "inventario"): ?> navbar-orange<?php endif ?> 
+    <?php if ($routesArray[3] == "productos"): ?> navbar-maroon <?php endif ?> 
     navbar-light">
 
     <ul class="navbar-nav">

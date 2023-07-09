@@ -1,6 +1,6 @@
 <?php
 
-$url ="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=GetAll";
+$url ="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -38,7 +38,7 @@ $output = json_decode(curl_exec($curl));
         <td><?php echo $out -> celularCliente ?> </td>
         <td><?php echo $out -> obraCliente ?> </td>
         <td>
-          <form action="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=delete" method="post">
+          <form action="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=delete" method="post">
             <input type="hidden" name="idCliente" value="<?php echo $out->idCliente ?>">
             <input type="submit" name="borrar" class="btn btn-danger" value="DELETE">
           </form>
@@ -64,7 +64,7 @@ $output = json_decode(curl_exec($curl));
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="http://localhost/SkylAb-114/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=insert" method="post">
+        <form action="http://localhost/SIMULACRO-GRUPO-PAREJAS/apirest/controllers/clientes.php?op=insert" method="post">
           <p>Por favor llenar todos los espacios con la infromación correspondiente</p>
             <div class="card-body">
               <div class="form-group">
